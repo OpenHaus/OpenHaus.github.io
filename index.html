@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>New year</title>
+  <title>New Year Countdown 2015</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
+  <meta name="description" content="New Year Countdown 2015">
   <meta name="author" content="">
 
 	<!--link rel="stylesheet/less" href="less/bootstrap.less" type="text/css" /-->
@@ -14,6 +14,7 @@
 	
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/flipclock.css">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
@@ -38,49 +39,78 @@
 		<div class="col-md-12 column">
 			<div class="jumbotron">
 				<h1>
-					New Year
+					New Year Countdown
 				</h1>
 				<p>
-					2015
+					Time until the year 2015 starts at your place.
 				</p>
 			</div>
 		</div>
 	</div>
 	<div class="row clearfix">
-		<div class="col-md-4 column">
-			<h2>
-				Heading
-			</h2>
-			<p>
-				Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-			</p>
-			<p>
-				<a class="btn" href="#">View details »</a>
-			</p>
-		</div>
-		<div class="col-md-4 column">
-			<h2>
-				Heading
-			</h2>
-			<p>
-				Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-			</p>
-			<p>
-				<a class="btn" href="#">View details »</a>
-			</p>
-		</div>
-		<div class="col-md-4 column">
-			<h2>
-				Heading
-			</h2>
-			<p>
-				Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-			</p>
-			<p>
-				<a class="btn" href="#">View details »</a>
-			</p>
+		<div class="col-md-10 col-md-offset-2">
+			<div class="clock" style="margin:2em;"></div>
 		</div>
 	</div>
+	<!--
+	<div class="row clearfix">
+		<div class="col-md-4 column">
+			<h2>
+				Tokyo
+			</h2>
+			<div class="small-clock clock-1" style="margin:2em;"></div>
+		</div>
+		<div class="col-md-4 column">
+			<h2>
+				Berlin
+			</h2>
+			<div class="small-clock clock-2" style="margin:2em;"></div>
+		</div>
+		<div class="col-md-4 column">
+			<h2>
+				Los Angeles
+			</h2>
+			<div class="small-clock clock-3" style="margin:2em;"></div>
+		</div>
+	</div>
+	//-->
 </div>
+<script src="js/flipclock.min.js"></script>
+<script type="text/javascript">
+	var clock;
+
+	$(document).ready(function() {
+		var language = window.navigator.userLanguage || window.navigator.language;
+		var currentDate = new Date();
+		var futureDate = new Date(currentDate.getFullYear() + 1, 0, 1);
+		var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+		clock = $('.clock').FlipClock(diff, {
+			clockFace: 'DailyCounter',
+			countdown: true,
+			language: language
+		});
+		/**
+		var clocks = [];
+		clocks.push($('.clock-1').FlipClock(diff, {
+			clockFace: 'DailyCounter',
+			countdown: true,
+			showSeconds: false,
+			language: 'jp'
+		}));
+		clocks.push($('.clock-2').FlipClock(diff, {
+			clockFace: 'DailyCounter',
+			countdown: true,
+			showSeconds: false,
+			language: 'de-de'
+		}));
+		clocks.push($('.clock-3').FlipClock(diff, {
+			clockFace: 'DailyCounter',
+			countdown: true,
+			showSeconds: false,
+			language: 'en'
+		}));
+		 */
+	});
+</script>
 </body>
 </html>
