@@ -3,7 +3,7 @@
     -moz-transform: scale(0.5)
 }
 
-.small-clock {
+.tiny-clock {
     position: relative !important;
     padding-top: 0px;
     margin-left: -194px;
@@ -14,4 +14,30 @@
    -webkit-transform: scale(.54);
    -o-transform: scale(.54);
    -moz-transform: scale(.54);
+}
+
+.small-clock {
+    transform-origin: 0 0;
+    transform: scale(.25);
+    -ms-transform: scale(.25);
+    -webkit-transform-origin: 0 0;
+    -webkit-transform: scale(.25);
+    -o-transform-origin: 0 0;
+    -o-transform: scale(.25);
+    -moz-transform-origin: 0 0;
+    -moz-transform: scale(.25);
+}
+
+body {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background: none;
+}
+
+.full {
+    background: url('../img/new-year-countdown-2014-2015.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
