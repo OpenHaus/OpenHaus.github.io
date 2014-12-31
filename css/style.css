@@ -41,3 +41,8 @@ body {
     -o-background-size: cover;
     background-size: cover;
 }
+
+a.textlike {
+    text-decoration: none;
+    color: #ffffff;
+}
